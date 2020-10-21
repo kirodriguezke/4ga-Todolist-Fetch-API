@@ -1,24 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 //include images into your bundle
 import rigoImage from "../../img/rigo-baby.jpg";
 
 //create your first component
 export function Home() {
+	const [hacer, setHacer] = useState(["Element 1", "Element 2"]);
+	const [value, setValue] = useState("");
+
 	return (
-		<div className="text-center mt-5">
-			<h1>Hello Rigo!</h1>
+		<div className="container">
+			<h1>Quehaceres:</h1>
 			<p>
-				<img src={rigoImage} />
+				Mi valor es: &nbsp;
+				{value}
 			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+			<input
+				onChange={event => {
+					setValue(event.target.value);
+				}}
+				onKeyPress={event => (key === "Enter" ? <p>{value}</p> : " ")}
+			/>
 		</div>
 	);
 }

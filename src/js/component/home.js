@@ -25,7 +25,10 @@ export function Home() {
 		let newTodo = [...todo];
 		let removed = newTodo.splice(index, 1);
 		setTodo(newTodo);
-	}
+    }
+    /*function getTODO(){
+
+    }*/
 
 	return (
 		<div className="text-center mt-5">
